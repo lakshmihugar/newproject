@@ -7,6 +7,7 @@ import { DataserviceService } from '../service/dataservice.service';
   styleUrls: ['./contactus.component.css']
 })
 export class ContactusComponent implements OnInit,OnDestroy {
+ 
   public message:any;
   public subscription: any;
 public  countryList=[
@@ -14,9 +15,15 @@ public  countryList=[
   {id:2,name:"USA"},
   {id:1,name:"Thiland"},
 ]
-  
+
+public name:string="";
+public  email:string="";
+public password:string="";
 
   constructor(private service:DataserviceService) { }
+  submit(myForm:any) {
+    console.log(myForm.value)
+  }
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }

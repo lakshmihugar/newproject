@@ -3,8 +3,9 @@
 <button (click)="getMessage()" class="btn btn-primary">Get latest message</button>
 {{message}}
 <hr>
+<div class="">
 <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
- 
+  <h4>Reactive Forms</h4>
   <p>
     <label for="firstname">First Name</label>
     <input type="text" name="firstname" ngModel>
@@ -30,10 +31,10 @@
     <label for="isMarried">Married</label>
     <input type="checkbox" name="isMarried" ngModel>
   </p>
- 
+  <label for="Country">Country</label>
   <select name="country" ngModel>
     <option [ngValue]="c.id" *ngFor="let c of countryList">
-      {{c.name}}
+      {{c.name}} 
     </option>
   </select>
  
@@ -42,23 +43,31 @@
   </p>
   
 </form>
-
-<div class="jumbotron jumbotron-fluid">
-<form #contactFormSecond="ngForm" (ngSubmit)="onSubmit(contactFormSecond)">
-  <div class="form-group">
-    <label for="email">Email address:</label>
-    <input type="email" class="form-control" placeholder="Enter email" id="email">
-  </div>
-  <div class="form-group">
-    <label for="pwd">Password:</label>
-    <input type="password" class="form-control" placeholder="Enter password" id="pwd">
-  </div>
-  <div class="form-group form-check">
-    <label class="form-check-label">
-      <input class="form-check-input" type="checkbox"> Remember me
-    </label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
 </div>
- 
+
+<div class="container mt-5" style="max-width: 550px;">
+
+  <form #myForm="ngForm" (ngSubmit)="submit(myForm)">
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" class="form-control" name="name" [(ngModel)]="name"  required>
+    </div>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" class="form-control" name="email" [(ngModel)]="email" required>
+    </div>
+
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" class="form-control" name="password" [(ngModel)]="password" required>
+    </div>
+
+    
+
+    <div class="form-group">
+      <button class="btn btn-primary btn-block">Submit</button>
+    </div>
+  </form>
+
+</div>

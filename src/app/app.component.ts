@@ -1,6 +1,8 @@
 import { AfterViewInit, Component,  OnInit,  ViewChild } from '@angular/core';
 import { ChildComponent } from './child/child.component';
 
+
+  
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,7 +10,6 @@ import { ChildComponent } from './child/child.component';
 })
 export class AppComponent implements OnInit ,AfterViewInit{
   
-    
   public  celcius!: number;
    public  Fahrenheit!: number;   
 
