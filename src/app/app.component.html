@@ -1,0 +1,76 @@
+
+
+  <div class="row">
+  <ul class="nav nav-tabs">
+        <li routerLinkActive="active"><a routerLink="/home"> Home </a></li>
+        <li routerLinkActive="active"><a routerLink="/aboutus"> AboutUs </a></li>
+         <li routerLinkActive="active"><a routerLink="/contactus"> ContactUs </a></li>
+        </ul>
+    </div>
+ 
+
+<router-outlet></router-outlet>
+<br>
+<hr>
+
+<h4><app-child [parenttext]="text"(messageEventEmitter)="recievedEmitterMessage($event)"></app-child></h4>
+<h5>{{recievedChildMessage}}</h5>
+
+<h4>{{recievedEmitterChildMessage}}</h4>
+<hr>
+
+
+<h2>Pick a highlight color</h2>
+<div>
+  <input type="radio" name="colors" (click)="color='purple'">Purple
+  <input type="radio" name="colors" (click)="color='yellow'">Yellow
+  <input type="radio" name="colors" (click)="color='orange'">Orange
+</div>
+<p [appHighlight]="color">Highlight me!</p>
+<p [appHighlight]="color" defaultColor="violet">
+  Highlight me too!
+</p>
+<div>
+  <h5>Today is {{today | date}}</h5>
+  <p>The time is {{today | date:'h:mm a z'}}</p>
+  </div>
+  <div>
+  
+    <h5>A: {{a | percent}}</h5>
+
+    <h5>B: {{b | percent:'4.3-5'}}</h5>
+  </div>
+  <div>
+    <ul>
+      <li *ngFor="let i of collection | slice:1:3">{{i}}</li>
+      </ul>
+  </div>
+  <div>
+    <p>{{str}}[0:4]: '{{str | slice:0:4}}' 
+      </p>
+      <p>{{str}}[-4:-2]: '{{str | slice:-4:-2}}</p>
+  </div>
+  <div class='card'>
+    <div class='card-header'>
+      <p>{{title}} </p>
+    </div>
+    <div class="card-body">
+   
+      <div class="row">
+        <h3>Fahrenheit to Celsius </h3>
+      </div>
+      <div class="row">
+        <p> Fahrenheit : <input type="text" [(ngModel)]="Fahrenheit" /> 
+        Celsius : {{Fahrenheit | pipes:'C'}} </p>
+      </div>
+   
+      <div class="row">
+        <h3>Celsius to Fahrenheit </h3>
+      </div>
+      <div class="row">
+        <p> celsius : <input type="text" [(ngModel)]="celcius" /> 
+         Fahrenheit : {{celcius | pipes:'F'}} </p>
+      </div>
+    </div>
+  </div>
+   

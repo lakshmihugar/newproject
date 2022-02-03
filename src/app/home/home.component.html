@@ -1,0 +1,46 @@
+<p>home works!</p>
+<button (click)="getMessage()" class="btn btn-primary">Get latest message</button>
+{{message}}
+
+
+<h4>User List</h4>
+<table class="table table-responsive table striped">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody *ngIf="userList.length>0">
+        <tr *ngFor="let user of userList">
+            <td>{{user.fName}}</td>
+            <td>{{user.lName}}</td>
+            <td>{{user.age}}</td>
+         </tr>
+    </tbody > 
+    <tbody *ngIf="userList.length == 0">
+    <tr>
+        <td colspan="4" class="text-center">There is no user to display</td>
+    </tr>
+    </tbody>
+</table>
+<div  class='card'>
+    <div class='card-header'>
+      ngSwitch Example
+    </div>
+    <div class="card-body">
+      Input string : <input type='text' [(ngModel)]="num" />
+   
+      <div [ngSwitch]="num">
+        <div *ngSwitchCase="'1'">One</div>
+        <div *ngSwitchCase="'2'">Two</div>
+        <div *ngSwitchCase="'3'">Three</div>
+        <div *ngSwitchCase="'4'">Four</div>
+        <div *ngSwitchCase="'5'">Five</div>
+        <div *ngSwitchDefault>This is Default</div>
+      </div>
+    </div>
+  </div>
+  <button   appDirectives toolTip = "Good morning">Click to toggle</button>
+   

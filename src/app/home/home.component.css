@@ -1,0 +1,24 @@
+td{
+    color:navy;
+}
+th{
+    color: tomato;
+}
+h4{
+    color: orchid;
+}
+div{
+    color:deeppink;
+}
+.toolTip {
+    display: inline-block;
+    border-bottom: 1px dotted black; 
+    position: absolute;
+    color:royalblue;
+  }
+  .toggle{
+      color:blue;
+  }
+  button{
+      background:lightpink;
+  }
